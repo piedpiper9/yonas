@@ -1,44 +1,164 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>康文昌的在线HTML 教学小工具</title>
-    <style>  
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex学习</title>
+    <style>
       body {
         margin: 0;
+        height: 100vh;
+        background-color: #eee;
+      }
+      /* * {
+        border: 1px solid #333;
+      } */
+      .flex {
+        display: flex;
+      }
+      .flex1 {
+        flex: 1;
+      }
+      .column {
+        flex-direction: column;
+      }
+      .yinYing {
+        box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+          rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+      }
+      .baiSe {
+        background-color: #fff;
+      }
+      .mg8 {
+        margin: 8px;
+      }
+      .mgr8 {
+        margin-right: 8px;
+      }
+      .mgt8 {
+        margin-top: 8px;
+      }
+      .shuJu {
+        height: 100px;
+      }
+      .lieBiaoXiang {
+        height: 160px;
+      }
+      .daoHang {
+        padding: 10px 20px;
+        border-bottom: 1px solid rgb(201, 201, 201);
+        font-size: 14px;
+        color: #666;
+      }
+      .neiRong::-webkit-scrollbar {
+        display: none;
+      }
+
+      @media (max-width: 600px) {
+        .ceBian {
+          display: none;
+        }
+        .neiRong {
+          flex-direction: column;
+        }
+        .shuJuQu {
+          flex-direction: column;
+        }
+        .youQu {
+          margin-left: 8px;
+        }
+        .shuJu {
+          margin: 0 0 8px;
+          flex: auto;
+        }
+      }
+      .color {
+        color: rgb(54, 104, 128);
+      }
+      .text-align {
+        text-align: center;
       }
     </style>
   </head>
-  <body>
-    <div style="
-      background-color: orange;
-      text-align: center;
-      padding: 40px;
-      ">
-      <img src="https://ts1.cn.mm.bing.net/th/id/R-C.84408a54b2862a45fa9fc4a7a689c49a?rik=RlalWHLD%2fkNvMg&riu=http%3a%2f%2fshirtigo.co%2fwp-content%2fuploads%2f2014%2f04%2fpiedpiper-1.jpg&ehk=hy5pmfUmB1%2be94ivV8HuxsSic6fNMmJ129OcNgMQUtw%3d&risl=&pid=ImgRaw&r=0" alt="yonas" width="100px" height="100px">
+  <body class="flex">
+    <!-- 侧边栏 -->
+    <div
+      style="width: 200px; z-index: 3"
+      class="ceBian flex column baiSe yinYing"
+    >
+      <!-- 侧边头像栏 -->
+      <div
+        style="
+          padding: 10px;
+          align-items: center;
+          justify-content: center;
+          border-bottom: 1px solid #999;
+        "
+        class="flex"
+      >
+        <img
+          alt="logo"
+          src="https://ts1.cn.mm.bing.net/th/id/R-C.84408a54b2862a45fa9fc4a7a689c49a?rik=RlalWHLD%2fkNvMg&riu=http%3a%2f%2fshirtigo.co%2fwp-content%2fuploads%2f2014%2f04%2fpiedpiper-1.jpg&ehk=hy5pmfUmB1%2be94ivV8HuxsSic6fNMmJ129OcNgMQUtw%3d&risl=&pid=ImgRaw&r=0"
+          width="40px"
+          height="40px"
+        />
+        <div style="margin-left: 10px; color: rgb(54, 104, 128)">yonas</div>
+      </div>
+      <!-- 导航栏 -->
+      <div class="flex1">
+        <div class="daoHang">动态</div>
+        <div class="daoHang">收藏</div>
+        <div class="daoHang">订阅</div>
+        <div class="daoHang">设置</div>
+      </div>
     </div>
-    <div style="
-      max-width:700px;
-      margin: 30px auto;
-      padding: 15px;
-      line-height: 1.7;
-      color: purple;
-      background-color: #f1f1f1;
-    ">
-      <p>大家好，我是yonas</p>
-      <p>这是我制作的第一静态网站</p>
-      <p>希望可以有一个好的开始</p>
-      <p>大家一起加油！</p>
-    </div>
-    <div style="
-      background-color: brown;
-      text-align: center;
-      padding: 40px;
-      font-size:12px;
-    ">
-      <p>yonas的个人网站</p>
-      <a href="">友情链接</a>
+    <!-- 主区域 -->
+    <div class="flex flex1 column">
+      <!-- 头部栏 -->
+      <div
+        style="height: 60px; z-index: 2; color: rgb(54, 104, 128)"
+        class="baiSe yinYing text-align"
+      >
+        <h1>yonas的个人网站</h1>
+      </div>
+      <!-- 内容区 -->
+      <div class="flex flex1 neiRong" style="overflow: auto">
+        <!-- 左区 -->
+        <div style="flex: 3" class="flex column mg8">
+          <!-- 数据区 -->
+          <div class="flex shuJuQu">
+            <div class="shuJu baiSe yinYing flex1 mgr8 color text-align">
+              创作中心
+            </div>
+            <div class="shuJu baiSe yinYing flex1 mgr8 color text-align">
+              推荐服务
+            </div>
+            <div class="shuJu baiSe yinYing flex1 mgr8 color text-align">
+              我的小组
+            </div>
+            <div class="shuJu baiSe yinYing flex1 color text-align">
+              联系方式
+            </div>
+          </div>
+          <!-- 列表区，列表数据可以无限增加 -->
+          <div class="flex column">
+            <!-- 列表项 -->
+            <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
+            <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
+            <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
+            <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
+            <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
+          </div>
+        </div>
+        <!-- 右区 -->
+        <div style="flex: 1" class="youQu flex column mgr8 mgt8">
+          <!-- 提示区 -->
+          <div style="height: 150px" class="baiSe yinYing"></div>
+          <!-- 消息区 -->
+          <div style="height: 300px" class="mgt8 baiSe yinYing"></div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
