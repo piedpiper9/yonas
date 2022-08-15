@@ -4,12 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>flex学习</title>
+    <title>yonas的个人网站</title>
     <style>
       body {
-        margin: 0;
-        height: 100vh;
-        background-color: #eee;
+        background: #12c2e9; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #f64f59,
+          #c471ed,
+          #12c2e9
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #f64f59,
+          #c471ed,
+          #12c2e9
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
       }
       /* * {
         border: 1px solid #333;
@@ -28,7 +38,19 @@
           rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
       }
       .baiSe {
-        background-color: #fff;
+        background: #12c2e9; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #f64f59,
+          #c471ed,
+          #12c2e9
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #f64f59,
+          #c471ed,
+          #12c2e9
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
       }
       .mg8 {
         margin: 8px;
@@ -74,7 +96,7 @@
         }
       }
       .color {
-        color: rgb(54, 104, 128);
+        color: black;
       }
       .text-align {
         text-align: center;
@@ -107,10 +129,10 @@
       </div>
       <!-- 导航栏 -->
       <div class="flex1">
-        <div class="daoHang">动态</div>
-        <div class="daoHang">收藏</div>
-        <div class="daoHang">订阅</div>
-        <div class="daoHang">设置</div>
+        <div class="daoHang">时间</div>
+        <div class="daoHang">地区</div>
+        <div class="daoHang">评分</div>
+        <div class="daoHang">类型</div>
       </div>
     </div>
     <!-- 主区域 -->
@@ -120,7 +142,7 @@
         style="height: 60px; z-index: 2; color: rgb(54, 104, 128)"
         class="baiSe yinYing text-align"
       >
-        <h1>yonas的个人网站</h1>
+        <h1>yonas的影视网址</h1>
       </div>
       <!-- 内容区 -->
       <div class="flex flex1 neiRong" style="overflow: auto">
@@ -129,13 +151,13 @@
           <!-- 数据区 -->
           <div class="flex shuJuQu">
             <div class="shuJu baiSe yinYing flex1 mgr8 color text-align">
-              创作中心
+              影视中心
             </div>
             <div class="shuJu baiSe yinYing flex1 mgr8 color text-align">
-              推荐服务
+              评论中心
             </div>
             <div class="shuJu baiSe yinYing flex1 mgr8 color text-align">
-              我的小组
+              兴趣小组
             </div>
             <div class="shuJu baiSe yinYing flex1 color text-align">
               联系方式
@@ -144,19 +166,25 @@
           <!-- 列表区，列表数据可以无限增加 -->
           <div class="flex column">
             <!-- 列表项 -->
-            <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
-            <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
-            <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
-            <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
-            <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
+            <div class="lieBiaoXiang mgt8 baiSe yinYing">
+              <a href="https://movie.douban.com/top250">豆瓣top250</a>
+            </div>
+            <div class="lieBiaoXiang mgt8 baiSe yinYing">
+              <a href="https://www.imdb.com/chart/top">IMDBtop250</a>
+            </div>
           </div>
         </div>
         <!-- 右区 -->
         <div style="flex: 1" class="youQu flex column mgr8 mgt8">
           <!-- 提示区 -->
-          <div style="height: 150px" class="baiSe yinYing"></div>
+          <div style="height: 150px" class="baiSe yinYing">
+            这是yonas的影视专栏，这里有我想看、正在看和看过的影视。如果你对影视感兴趣欢迎评论、关注或转发。
+          </div>
           <!-- 消息区 -->
-          <div style="height: 300px" class="mgt8 baiSe yinYing"></div>
+          <div style="height: 300px" class="mgt8 baiSe yinYing">
+            <a href="https://www.douban.com/people/Bazinga_yao/">我的豆瓣</a>
+            <a href="https://space.bilibili.com/354846885">我的B站</a>
+          </div>
         </div>
       </div>
     </div>
