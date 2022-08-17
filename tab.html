@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>每日记录</title>
+    <meta
+      name="description"
+      content="记录每日最重要的事情，作为浏览器起始页面"
+    />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-image: url("https://img-qn.51miz.com/Element/00/70/00/88/b3eb657a_E700088_b59f62e8.jpg");
+        background-color: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+      .box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .div-time {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        font-size: 50px;
+        font-weight: lighter;
+      }
+      #searchbox {
+        border: 0;
+        border-bottom: 2px solid #fff;
+        padding: 4px 2px;
+        display: block;
+        background: 0;
+        line-height: 1.5;
+        outline: none;
+        text-align: center;
+        transition: border-color 0.2s ease-in-out;
+        border-radius: 0;
+        color: #fff;
+        font-size: 2rem;
+        max-width: 90%;
+      }
+
+      #button {
+        margin-left: -50px;
+        margin-right: 10px;
+        color: #ccc;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        line-height: 30px;
+        cursor: pointer;
+      }
+
+      input::placeholder {
+        color: #ccc;
+      }
+      input::-webkit-input-placeholder {
+        color: #ccc;
+      }
+    </style>
+  </head>
+
+  <body onload="startTime()" background="./img/background.jpg">
+    <div id="time" class="div-time"></div>
+    <div class="box">
+      <input placeholder="现在做什么？" id="searchbox" />
+      <span id="button" onclick="change()">✔</span>
+    </div>
+    <script src="tab.js">
+      let youShi = false;
+      function change() {
+        let button = document.getElementById("button");
+        let searchbox = document.getElementById("searchbox");
+
+        if (youShi) {
+          youShi = false;
+          button.innerText = "✔";
+          searchbox.style.borderBottomColor = "#fff";
+          searchbox.value = "";
+          searchbox.readOnly = false;
+          window.localStorage.removeItem("shi");
+        } else {
+          youShi = true;
+          button.innerText = "✘";
+          searchbox.style.borderBottomColor = "transparent";
+          searchbox.readOnly = true;
+          window.localStorage.setItem("shi", searchbox.value);
+        }
+      }
+      let data = window.localStorage.getItem("shi");
+      if (data) {
+        document.getElementById("shuRuKuang").value = data;
+        change();
+      }
+    </script>
+  </body>
+</html>
